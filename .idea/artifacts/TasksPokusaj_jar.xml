@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact name="TasksPokusaj:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/TasksPokusaj_jar</output-path>
+    <root id="root">
+      <element id="archive" name="TasksPokusaj.jar">
+        <element id="module-output" name="TasksPokusaj" />
+      </element>
+      <element id="directory" name="libs">
+        <element id="library" level="project" name="com.google.firebase:firebase-admin:7.2.0" />
+      </element>
+    </root>
+  </artifact>
+</component>
