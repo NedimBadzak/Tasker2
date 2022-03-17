@@ -1,7 +1,8 @@
-package ba.unsa.etf.rpr;
+package com.nedim;
 
 import com.google.api.core.ApiFuture;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.Timestamp;
 import com.google.cloud.firestore.*;
 
 import java.io.*;
@@ -54,6 +55,8 @@ public class DB {
     void addDocument(Map<String, Object> mapa) {
 
             mapa.put("completed", false);
+            mapa.put("date", Timestamp.now());
+            mapa.put("id", dajSve().stream().max(Comparator.comparingInt(t -> t.id)).get().id+1);
             ApiFuture<DocumentReference> result = db.collection("tasks").add(mapa);
             try {
                 DocumentReference documentReference = result.get();

@@ -1,4 +1,4 @@
-package ba.unsa.etf.rpr;
+package com.nedim;
 
 public class TerminalUtils {
     public static final String ANSI_RESET = "\u001B[0m";

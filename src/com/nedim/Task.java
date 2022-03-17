@@ -1,6 +1,6 @@
-package ba.unsa.etf.rpr;
+package com.nedim;
 
-import static ba.unsa.etf.rpr.TerminalUtils.*;
+import static com.nedim.TerminalUtils.*;
 
 public class Task {
     String text;
