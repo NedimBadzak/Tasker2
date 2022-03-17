@@ -1,8 +1,6 @@
 package com.nedim;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -36,7 +34,16 @@ public class Main {
             Scanner in = new Scanner(System.in);
             task = in.nextLine();
         }
-        if(task != "") mapa.put("tekst", task);
+        if(task != "") {
+            List<String> lista = List.of(task.split(" "));
+            String resultText = "";
+            for (String s : lista) {
+                if (s.contains("@")) {
+                    mapa.put("kategorija", s.substring(1));
+                } else resultText = resultText + s + " ";
+            }
+            mapa.put("tekst", resultText);
+        }
         try {
             db.addDocument(mapa);
         } catch (Exception e) {
