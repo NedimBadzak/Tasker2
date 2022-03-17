@@ -23,7 +23,8 @@ public class Main {
             } else {
                 for (int i = 0; i < args.length; i++) {
                     if (args[i].contains("@")) {
-                        mapa.put("kategorija", args[i].substring(1));
+                        if(mapa.containsKey("category")) mapa.put("category", mapa.get("category") + " " + args[i].substring(1));
+                        else mapa.put("category", args[i].substring(1));
                         continue;
                     }
                     task = task + " " + args[i];
@@ -39,7 +40,8 @@ public class Main {
             String resultText = "";
             for (String s : lista) {
                 if (s.contains("@")) {
-                    mapa.put("kategorija", s.substring(1));
+                    if(mapa.containsKey("category")) mapa.put("category", mapa.get("category") + " " + s.substring(1));
+                    else mapa.put("category", s.substring(1));
                 } else resultText = resultText + s + " ";
             }
             mapa.put("tekst", resultText);
